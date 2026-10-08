@@ -1,0 +1,189 @@
+/* ============================================================
+   SHARED STYLESHEET — used by both index.html and cv.html
+   Keep this file in the SAME FOLDER as your HTML files.
+   ============================================================ */
+
+/* ---- EDIT: COLOURS — change these to recolour the whole site ---- */
+:root{
+  --paper:#fcfcfb;
+  --ink:#16191c;
+  --muted:#5e6873;
+  --rule:#e3e5e7;
+  --accent:#17495c;
+  --accent-soft:#eaf1f3;
+
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+
+  --measure:52rem;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:75px}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.65;
+  font-synthesis-weight:none;
+}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(23,73,92,.28)}
+a:hover{border-bottom-color:var(--accent)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 1.5rem}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;background:#fff;padding:.6rem 1rem;z-index:20;border:1px solid var(--rule)}
+
+/* ---------- top navigation ---------- */
+.topbar{
+  position:sticky;top:0;z-index:10;
+  background:rgba(252,252,251,.92);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:60px;flex-wrap:wrap}
+.brand{font-family:var(--sans);font-weight:600;font-size:.95rem;letter-spacing:-.01em;border:0;color:var(--ink)}
+.navlinks{display:flex;gap:1.35rem;font-family:var(--sans);font-size:.85rem;font-weight:500}
+.navlinks a{color:var(--muted);border:0}
+.navlinks a:hover{color:var(--accent)}
+.navlinks a.current{color:var(--ink);border-bottom:2px solid var(--accent);padding-bottom:2px}
+
+/* ---------- hero (front page) ---------- */
+.hero{padding:3.75rem 0 1.5rem}
+.hero h1{font-size:clamp(2.1rem,5.5vw,2.9rem);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin:0 0 .55rem}
+.role{font-family:var(--sans);font-size:.98rem;font-weight:500;margin:0 0 .35rem}
+.affil{color:var(--muted);font-size:.98rem;margin:0}
+.underline{width:56px;height:3px;background:var(--accent);margin:1.15rem 0 1.25rem}
+.portrait{float:right;width:220px;height:275px;margin:0 0 1.5rem 2.75rem;object-fit:cover;border-radius:3px;filter:grayscale(12%)}
+
+/* ---------- contact link row ---------- */
+.linkrow{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.25rem}
+.linkrow a{
+  font-family:var(--sans);font-size:.82rem;font-weight:500;
+  padding:.34rem .78rem;border:1px solid var(--rule);border-radius:999px;
+  color:var(--ink);background:#fff;
+}
+.linkrow a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+
+/* ---------- sections ---------- */
+section{padding:2.25rem 0;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+.eyebrow{
+  font-family:var(--sans);font-size:.72rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.13em;color:var(--muted);
+  margin:0 0 1.35rem;
+}
+p{margin:0 0 1rem;max-width:44rem}
+
+/* ---------- research-interest tags ---------- */
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.35rem;padding:0;list-style:none}
+.tags li{font-family:var(--sans);font-size:.8rem;color:var(--muted);background:#fff;border:1px solid var(--rule);border-radius:3px;padding:.28rem .6rem}
+
+/* ---------- papers ---------- */
+.paper{padding:1.5rem 0;border-top:1px dotted var(--rule)}
+.paper:first-of-type{border-top:0;padding-top:0}
+.paper h3{font-size:1.14rem;font-weight:600;line-height:1.35;margin:0 0 .4rem;letter-spacing:-.005em}
+.byline{font-family:var(--sans);font-size:.86rem;color:var(--muted);margin:0 0 .7rem}
+.chip{
+  display:inline-block;font-family:var(--sans);font-size:.7rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.08em;
+  color:var(--accent);background:var(--accent-soft);
+  border-radius:3px;padding:.2rem .5rem;margin-bottom:.55rem;
+}
+details{margin:.2rem 0 .8rem}
+summary{cursor:pointer;font-family:var(--sans);font-size:.83rem;font-weight:500;color:var(--accent);width:fit-content;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ ";font-weight:600}
+details[open] summary::before{content:"– "}
+details[open] summary{margin-bottom:.6rem}
+.abstract{font-size:.95rem;color:#2c3238;border-left:2px solid var(--rule);padding-left:1rem;margin:0;max-width:44rem}
+.filerow{display:flex;flex-wrap:wrap;gap:.5rem .95rem;font-family:var(--sans);font-size:.83rem}
+.media{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin-top:.7rem}
+.media a{margin-right:.5rem}
+
+/* ============================================================
+   CV PAGE
+   ============================================================ */
+.pagehead{padding:3.25rem 0 1.75rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.pagehead h1{font-size:clamp(1.9rem,5vw,2.5rem);font-weight:600;letter-spacing:-.02em;margin:0}
+.pagehead .updated{font-family:var(--sans);font-size:.8rem;color:var(--muted);margin:.4rem 0 0}
+
+/* the download-PDF button */
+.btn{
+  font-family:var(--sans);font-size:.85rem;font-weight:600;
+  background:var(--accent);color:#fff;border:1px solid var(--accent);
+  padding:.6rem 1.1rem;border-radius:3px;white-space:nowrap;
+}
+.btn:hover{background:#0f3745;border-color:#0f3745;color:#fff}
+
+/* a CV entry: dates on the left, content on the right */
+.cv-entry{display:grid;grid-template-columns:8.5rem 1fr;gap:1.5rem;padding:.85rem 0;border-top:1px dotted var(--rule)}
+.cv-entry:first-of-type{border-top:0}
+.cv-entry .when{font-family:var(--sans);font-size:.83rem;color:var(--muted);padding-top:.22rem}
+.cv-entry .what{margin:0}
+.cv-entry strong{font-weight:600}
+.cv-entry .detail{display:block;font-family:var(--sans);font-size:.86rem;color:var(--muted);margin-top:.15rem}
+
+/* plain bulleted CV lists (service, skills, languages) */
+.cv-list{margin:0;padding-left:1.1rem}
+.cv-list li{margin-bottom:.4rem}
+
+/* ---------- tables (teaching, evaluations) ---------- */
+.subhead{font-family:var(--sans);font-size:.88rem;font-weight:600;margin:1.9rem 0 .6rem}
+.subhead:first-of-type{margin-top:0}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.tbl{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.87rem;min-width:34rem}
+table.tbl caption{text-align:left;font-size:.8rem;color:var(--muted);padding-bottom:.5rem}
+table.tbl th{
+  text-align:left;font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;
+  color:var(--muted);padding:.5rem .8rem .5rem 0;border-bottom:1px solid var(--ink);white-space:nowrap;
+}
+table.tbl td{padding:.62rem .8rem .62rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+table.tbl tr:last-child td{border-bottom:0}
+table.tbl td:last-child,table.tbl th:last-child{padding-right:0}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.note{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin-top:.8rem}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.5rem;margin-top:.5rem}
+.contact-grid h4{font-family:var(--sans);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);margin:0 0 .4rem}
+.contact-grid p{font-size:.95rem;margin:0}
+
+footer{border-top:1px solid var(--rule);padding:1.6rem 0 3rem;font-family:var(--sans);font-size:.8rem;color:var(--muted)}
+
+/* ---------- responsive ---------- */
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero{padding-top:2.5rem}
+  .portrait{float:none;display:block;width:132px;height:165px;margin:0 0 1.5rem}
+  .navlinks{gap:1rem;font-size:.8rem}
+  .topbar .wrap{min-height:52px;padding-top:.5rem;padding-bottom:.5rem}
+  .cv-entry{grid-template-columns:1fr;gap:.15rem}
+  .cv-entry .when{padding-top:0}
+  .pagehead{padding-top:2.5rem}
+  table.tbl{font-size:.83rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* ---------- printing ---------- */
+@media print{
+  .topbar,.btn,footer{display:none}
+  body{font-size:11pt;background:#fff}
+  details{display:block}
+  a{color:var(--ink);border:0}
+}
+.personal{font-size:.95rem;color:var(--muted)}
+.tbl--years{min-width:0}
+.tbl--years th:first-child,.tbl--years td:first-child{width:4.5rem}
+.tbl--years td:last-child{line-height:1.55}
+.tbl--years sup{font-size:.7em;line-height:0}
+#research{clear:both}
+#about{padding-top:.5rem}
+#about .eyebrow + p{overflow:hidden}
+#about .eyebrow + p + p{clear:right}
